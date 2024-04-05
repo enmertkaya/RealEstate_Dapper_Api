@@ -7,5 +7,9 @@ namespace RealEstate_Dapper_Api.Repositories.CategoryRepository
         Task<List<ResultCategoryDto>> GetAllCategoryAsync();
 
         void CreateCategory(CreateCategoryDto createCategoryDto);
+
+        void DeleteCategory(int id);
+
+        void UpdateCategory(UpdateCategoryDto categoryDto);
     }
 }
