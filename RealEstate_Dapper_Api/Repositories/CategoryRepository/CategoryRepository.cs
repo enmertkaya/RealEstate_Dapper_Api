@@ -1,6 +1,6 @@
 ﻿using RealEstate_Dapper_Api.Dtos.CategoryDtos;
 using RealEstate_Dapper_Api.Models.DapperContext;
-
+using Dapper;
 namespace RealEstate_Dapper_Api.Repositories.CategoryRepository
 {
     public class CategoryRepository : ICategoryRepository
@@ -12,9 +12,14 @@ namespace RealEstate_Dapper_Api.Repositories.CategoryRepository
             _context = context;
         }
 
-        public Task<List<ResultCategoryDto>> GetAllCategoryAsync()
+        public async Task<List<ResultCategoryDto>> GetAllCategoryAsync()
         {
-            return _context.geta
+            string query = "Select * From Category";
+            using(var connection= _context.CreateConnection())
+            {
+                var values=await connection.QueryAsync<ResultCategoryDto>(query);
+                return values.ToList();
+            }
         }
     }
 }
