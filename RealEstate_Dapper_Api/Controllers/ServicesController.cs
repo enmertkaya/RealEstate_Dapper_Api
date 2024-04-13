@@ -7,18 +7,17 @@ namespace RealEstate_Dapper_Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ServiceController : ControllerBase
+    public class ServicesController : ControllerBase
     {
         private readonly IServiceRepository _serviceRepository;
-
-        public ServiceController(IServiceRepository serviceRepository)
+        public ServicesController(IServiceRepository serviceRepository)
         {
             _serviceRepository = serviceRepository;
         }
         [HttpGet]
         public async Task<IActionResult> GetServiceList()
         {
-            var value = await _serviceRepository.GetAllServiceAsync();
+            var value =await _serviceRepository.GetAllServiceAsync();
             return Ok(value);
         }
         [HttpPost]
