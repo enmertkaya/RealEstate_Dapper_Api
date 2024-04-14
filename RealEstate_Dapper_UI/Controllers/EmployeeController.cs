@@ -1,32 +1,44 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using RealEstate_Dapper_UI.Dtos.EmployeeDtos;
+using RealEstate_Dapper_UI.Services;
+using System.Security.Claims;
 using System.Text;
 
 namespace RealEstate_Dapper_UI.Controllers
 {
+    [Authorize]
     public class EmployeeController : Controller
     {
         private readonly IHttpClientFactory _httpClientFactory;
-
-        public EmployeeController(IHttpClientFactory httpClientFactory)
+        private readonly ILoginService _loginService;
+        public EmployeeController(IHttpClientFactory httpClientFactory, ILoginService loginService, IHttpContextAccessor contextAccessor)
         {
             _httpClientFactory = httpClientFactory;
+            _loginService = loginService;
         }
-
         public async Task<IActionResult> Index()
         {
-            var client = _httpClientFactory.CreateClient();
-            var responseMessage = await client.GetAsync("https://localhost:7191/api/Employees");
-            if (responseMessage.IsSuccessStatusCode)
+            var user = User.Claims;
+            var userId = _loginService.GetUserId;
+
+
+            var token = User.Claims.FirstOrDefault(x => x.Type == "realestatetoken")?.Value;
+            if (token != null)
             {
-                var jsonData = await responseMessage.Content.ReadAsStringAsync();
-                var values = JsonConvert.DeserializeObject<List<ResultEmployeeDto>>(jsonData);
-                return View(values);
+                var client = _httpClientFactory.CreateClient();
+                var responseMessage = await client.GetAsync("https://localhost:7191/api/Employees");
+                if (responseMessage.IsSuccessStatusCode)
+                {
+                    var jsonData = await responseMessage.Content.ReadAsStringAsync();
+                    var values = JsonConvert.DeserializeObject<List<ResultEmployeeDto>>(jsonData);
+                    return View(values);
+                }
             }
             return View();
         }
-
         [HttpGet]
         public IActionResult CreateEmployee()
         {
@@ -45,7 +57,6 @@ namespace RealEstate_Dapper_UI.Controllers
             }
             return View();
         }
-
         public async Task<IActionResult> DeleteEmployee(int id)
         {
             var client = _httpClientFactory.CreateClient();
