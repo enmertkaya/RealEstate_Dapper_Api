@@ -15,6 +15,17 @@ Popüler Lokasyonlar ana sayfada bu sekilde gözükür ;
 Ana Sayfa içerisinde Günün favori ilanları,fırsatlar,hakkımızda,bize ulaşın alanları yer almaktadır.
 ![e2](https://github.com/enmertkaya/RealEstate_Dapper_Api/assets/151652097/a845a556-e28d-45fb-82ba-c4821463988f)
 
+Modelimizden gelen değerleri alıp bir token olusturma islemi gerceklestirdik.
+![e6](https://github.com/enmertkaya/RealEstate_Dapper_Api/assets/151652097/40265f86-e396-497c-8696-83bcaf062097)
+
+Giriş yapan kullanıcı için Apide JWT oluşturma;
+![e7](https://github.com/enmertkaya/RealEstate_Dapper_Api/assets/151652097/f1bd04c3-294e-4585-b2da-b5f85b4d5c70)
+
+ Json Web Token Api Consume ile Giriş Yapma;
+![e9](https://github.com/enmertkaya/RealEstate_Dapper_Api/assets/151652097/bb970126-a92b-4b1a-bfc8-0a4e0fd0c868)
+
+ 
+
 Dashboard kısmında giris yapan kullanıcı bilgileri gelir.İstatistik bilgileri ve dinamik grafikler bu sekildedir.
 ![e4](https://github.com/enmertkaya/RealEstate_Dapper_Api/assets/151652097/b4f2d568-6eab-44be-a309-577f9ac560e5)
 
