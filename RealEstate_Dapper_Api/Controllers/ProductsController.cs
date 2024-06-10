@@ -50,25 +50,53 @@ namespace RealEstate_Dapper_Api.Controllers
             return Ok(values);
         }
 
-        [HttpGet("GetProductAdvertListByEmployeeAsyncByTrue")]
-        public async Task<IActionResult> GetProductAdvertListByEmployeeAsyncByTrue(int id)
+        [HttpGet("ProductAdvertsListByEmployeeByTrue")]
+        public async Task<IActionResult> ProductAdvertsListByEmployeeByTrue(int id)
         {
-            var values=await _productRepository.GetProductAdvertListByEmployeeAsyncByTrue(id);
+            var values = await _productRepository.GetProductAdvertListByEmployeeAsyncByTrue(id);
             return Ok(values);
         }
 
-        [HttpGet("GetProductAdvertListByEmployeeAsyncByFalse")]
-        public async Task<IActionResult> GetProductAdvertListByEmployeeAsyncByFalse(int id)
+        [HttpGet("ProductAdvertListByEmployeeByFalse")]
+        public async Task<IActionResult> ProductAdvertListByEmployeeByFalse(int id)
         {
             var values = await _productRepository.GetProductAdvertListByEmployeeAsyncByFalse(id);
             return Ok(values);
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateProduct (CreateProductDto createProductDto)
+        public async Task<IActionResult> CretaeProduct(CreateProductDto createProductDto)
         {
             await _productRepository.CreateProduct(createProductDto);
             return Ok("İlan başarıyla eklendi");
+        }
+
+        [HttpGet("GetProductByProductId")]
+        public async Task<IActionResult> GetProductByProductId(int id)
+        {
+            var values = await _productRepository.GetProductByProductId(id);
+            return Ok(values);
+        }
+
+        [HttpGet("ResultProductWithSearchList")]
+        public async Task<IActionResult> ResultProductWithSearchList(string searchKeyValue, int propertyCategoryId, string city)
+        {
+            var values = await _productRepository.ResultProductWithSearchList(searchKeyValue, propertyCategoryId, city);
+            return Ok(values);
+        }
+
+        [HttpGet("GetProductByDealOfTheDayTrueWithCategory")]
+        public async Task<IActionResult> GetProductByDealOfTheDayTrueWithCategory()
+        {
+            var values = await _productRepository.GetProductByDealOfTheDayTrueWithCategoryAsync();
+            return Ok(values);
+        }
+
+        [HttpGet("GetLast3Product")]
+        public async Task<IActionResult> GetLast3Product()
+        {
+            var values = await _productRepository.GetLast3ProductAsync();
+            return Ok(values);
         }
 
     }
