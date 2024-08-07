@@ -1,10 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using RealEstate_Dapper_UI.Dtos.BottomGridDtos;
 using RealEstate_Dapper_UI.Dtos.TestimonialDtos;
 
-namespace RealEstate_Dapper_UI.ViewComponents.Home
+namespace RealEstate_Dapper_UI.ViewComponents.HomePage
 {
-    public class _DefaultOurTestimonialComponentPartial : ViewComponent
+    public class _DefaultOurTestimonialComponentPartial:ViewComponent
     {
         private readonly IHttpClientFactory _httpClientFactory;
         public _DefaultOurTestimonialComponentPartial(IHttpClientFactory httpClientFactory)

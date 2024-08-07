@@ -2,9 +2,9 @@
 using Newtonsoft.Json;
 using RealEstate_Dapper_UI.Dtos.BottomGridDtos;
 
-namespace RealEstate_Dapper_UI.ViewComponents.Home
+namespace RealEstate_Dapper_UI.ViewComponents.HomePage
 {
-    public class _DefaultBottomGridComponentPartial :ViewComponent
+    public class _DefaultBottomGridComponentPartial:ViewComponent
     {
         private readonly IHttpClientFactory _httpClientFactory;
         public _DefaultBottomGridComponentPartial(IHttpClientFactory httpClientFactory)
@@ -23,6 +23,5 @@ namespace RealEstate_Dapper_UI.ViewComponents.Home
             }
             return View();
         }
-
     }
 }

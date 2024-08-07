@@ -65,5 +65,6 @@ namespace RealEstate_Dapper_UI.Controllers
             }
             return View();
         }
+
     }
 }

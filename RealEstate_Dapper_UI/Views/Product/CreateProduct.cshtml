@@ -15,22 +15,22 @@
                     <input type="text" asp-for="Title" class="form-control" />
                     <br />
                     <label>Şehir</label>
-                    <input type="text" asp-for="City" class="form-control" />
+                    <input type="text" asp-for="Title" class="form-control" />
                     <br />
                     <label>İlçe</label>
-                    <input type="text" asp-for="District" class="form-control" />
+                    <input type="text" asp-for="Title" class="form-control" />
                     <br />
                     <label>Kategori</label>
-                    @Html.DropDownListFor(x => x.EmployeeID, (List<SelectListItem>)ViewBag.v, new { @class = "form-control" })
+                    @Html.DropDownListFor(x=>x.ProductCategory,(List<SelectListItem>)ViewBag.v,new {@class="form-control"})
                     <br />
                     <label>Fiyat</label>
-                    <input type="text" asp-for="Price" class="form-control" />
+                    <input type="text" asp-for="Title" class="form-control" />
                     <br />
                     <label>Tür</label>
-                    <input type="text" asp-for="Type" class="form-control" />
+                    <input type="text" asp-for="Title" class="form-control" />
                     <br />
                     <label>Kapak Fotoğrafı</label>
-                    <input type="text" asp-for="CoverImage" class="form-control" />
+                    <input type="text" asp-for="Title" class="form-control" />
                     <br />
                     <label>İlan Açık Adresi</label>
                     <textarea asp-for="Address" class="form-control" rows="5"></textarea>

@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace RealEstate_Dapper_UI.ViewComponents.Home
+namespace RealEstate_Dapper_UI.ViewComponents.HomePage
 {
-    public class _DefaultBrandComponentPartial : ViewComponent
+    public class _DefaultBrandComponentPartial:ViewComponent
     {
         public IViewComponentResult Invoke()
         {
