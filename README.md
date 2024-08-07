@@ -24,6 +24,10 @@ Giriş yapan kullanıcı için Apide JWT oluşturma;
  Json Web Token Api Consume ile Giriş Yapma;
 ![e9](https://github.com/enmertkaya/RealEstate_Dapper_Api/assets/151652097/bb970126-a92b-4b1a-bfc8-0a4e0fd0c868)
 
+Parametreli Trigger Kullanımı;
+![image](https://github.com/user-attachments/assets/87f1cba0-818e-4862-8055-00fa9e913e9e)
+
+
  
 
 Dashboard kısmında giris yapan kullanıcı bilgileri gelir.İstatistik bilgileri ve dinamik grafikler bu sekildedir.
