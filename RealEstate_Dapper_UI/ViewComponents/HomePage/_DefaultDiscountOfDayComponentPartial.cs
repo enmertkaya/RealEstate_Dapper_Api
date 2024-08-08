@@ -5,7 +5,7 @@ using RealEstate_Dapper_UI.Dtos.SubFeatureDtos;
 
 namespace RealEstate_Dapper_UI.ViewComponents.HomePage
 {
-    public class _DefaultDiscountOfDayComponentPartial:ViewComponent
+    public class _DefaultDiscountOfDayComponentPartial : ViewComponent
     {
         private readonly IHttpClientFactory _httpClientFactory;
         public _DefaultDiscountOfDayComponentPartial(IHttpClientFactory httpClientFactory)
